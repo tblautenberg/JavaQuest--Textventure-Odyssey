@@ -4,13 +4,8 @@ public class TextBasedGame
 {
     public static void main(String[] args)
     {
-        Scanner scannerObj = new Scanner(System.in);
+        Scanner scannerObj = new Scanner(System.in);    
 
-        // Create player class
-        
-        Hunter player = new Hunter(100, 100, 10, 10, 10, 10, 10);
-
-        // Class array
 
         String[] classes = {"Warrior", "Paladin", "Mage", "Hunter"};
 
@@ -26,21 +21,24 @@ public class TextBasedGame
 
                 if(welcomePrompt == 1)
                 {
-                    System.out.print("Greetings wandere! Please give us your name: ");
-                    String C_name = scannerObj.nextLine();
-                    System.out.print("Please enter your age: ");
-                    int C_age = Integer.parseInt(scannerObj.nextLine());
-                    System.out.println("Please select your class (0 = Warrior, 1 = Paladin, 2 = Mage, 3 = Hunter");
-                    int C_class = Integer.parseInt(scannerObj.nextLine());
-                    System.out.println("Okay " + C_name + " the " + classes[C_class] + ", so this is the story about you....");
-                    System.out.println("After weeks of gathering materiels in the mountians, you ara headed down the Kings Road, to trade your goods for coin at the market");
-                    player.currentPlayerStats();
-                    player.aimedShot();
-                    player.currentPlayerStats();
-                    player.arcaneShot();
-                    player.currentPlayerStats();
-                    player.manaPotion();
-                    player.healthPotion();
+                    DialogPrinter.printDialog("Greetings wanderer! Please give us your name: ");
+                    String p_Name = scannerObj.nextLine();
+                    DialogPrinter.printDialog(p_Name + ", nice to meet you. You have a bow. May I assume you are a hunter? (Y/N) \n");
+                    String playerPrompt1 = scannerObj.nextLine();
+
+                    if(playerPrompt1.equals("Y"))
+                    {
+                        DialogPrinter.printDialog("Cool");
+                    }
+                    else if(playerPrompt1.equals("N"))
+                    {
+                        DialogPrinter.printDialog("Not cool man");
+                    }
+                    else
+                    {
+                        System.out.println("Invalid input - please select either, Y or N");
+                    }
+
                 }
                 else if(welcomePrompt == 2)
                 {

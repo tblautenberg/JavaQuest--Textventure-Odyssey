@@ -9,13 +9,13 @@ public class Hunter extends MainPlayerClass {
     }
 
 
-    public void basicAttack()
-    {
+    public int basicAttack() {
         Random basicAttackDmgRand = new Random();
         int basicAttackUpperBound = 7;
         int basicAttackDmg = basicAttackDmgRand.nextInt(basicAttackUpperBound);
-        System.out.println("The hunter carefully aims at his target, releasing a powerfull shot!");
+        System.out.println("The hunter carefully aims at his target, releasing a powerful shot!");
         System.out.println("The aimed shot does " + basicAttackDmg + " DMG!");
+        return basicAttackDmg; // Return the damage value
     }
     
 
