@@ -9,12 +9,12 @@ public class Hunter extends MainPlayerClass {
     }
 
 
-    public int basicAttack() {
+    public int basicAttack() 
+    {
         Random basicAttackDmgRand = new Random();
         int basicAttackUpperBound = 7;
         int basicAttackDmg = basicAttackDmgRand.nextInt(basicAttackUpperBound);
-        System.out.println("The hunter carefully aims at his target, releasing a powerful shot!");
-        System.out.println("The aimed shot does " + basicAttackDmg + " DMG!");
+        DialogPrinter.printDialog("The shot does " + basicAttackDmg + " DMG!");
         return basicAttackDmg; // Return the damage value
     }
     
@@ -26,7 +26,7 @@ public class Hunter extends MainPlayerClass {
         Boolean huntersMarkActive = true;
     }
 
-    public void aimedShot()
+    public int aimedShot()
     {
 
         Random aimedShotDmgRand = new Random();
@@ -35,10 +35,11 @@ public class Hunter extends MainPlayerClass {
         System.out.println("The hunter carefully aims at his target, releasing a powerfull shot!");
         System.out.println("The aimed shot does " + aimedShotDmg + " DMG!");
         currentMana -= 15;
+        return aimedShotDmg;
 
     }
 
-    public void arcaneShot()
+    public int arcaneShot()
     {
         Random arcaneShotDmgRand = new Random();
         int arcaneUpperBound = 10;
@@ -46,5 +47,6 @@ public class Hunter extends MainPlayerClass {
         System.out.println("The hunter casts arcane shot.");
         System.out.println("The shot deals " + arcaneShotDmg + " DMG!");
         currentMana -=10;
+        return arcaneShotDmg;
     }
 }

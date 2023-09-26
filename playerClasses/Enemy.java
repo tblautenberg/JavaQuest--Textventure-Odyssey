@@ -1,5 +1,4 @@
 package playerClasses;
-
 import java.util.Random;
 
 public class Enemy {
@@ -29,8 +28,9 @@ public class Enemy {
         Random basicAttackDmgRand = new Random();
         int basicAttackUpperBound = 7;
         int basicAttackDmg = basicAttackDmgRand.nextInt(basicAttackUpperBound);
-        System.out.println("The dragon takes a deep breath, and lay the land in a burning glaze");
-        System.out.println("The intense fire of the beast does " + basicAttackDmg + " DMG!");
+        DialogPrinter.printDialog("The dragon takes a deep breath, and lay the land in a burning glaze");
+        System.out.println();
+        DialogPrinter.printDialog("The intense fire of the beast does " + basicAttackDmg + " DMG!");
         return basicAttackDmg; // Return the damage value
     }
 }

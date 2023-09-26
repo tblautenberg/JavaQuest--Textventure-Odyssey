@@ -1,3 +1,4 @@
+package playerClasses;
 public class DialogPrinter {
 
     public static void printDialog(String dialog) {
