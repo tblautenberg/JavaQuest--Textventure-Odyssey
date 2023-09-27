@@ -22,15 +22,42 @@ public class Enemy {
     {
         System.out.println(ANSI_RED + "Current HP: " + currentHP + ANSI_RESET);
         System.out.println(ANSI_BLUE + "Current MANA: " + currentMana + ANSI_RESET);
+
+
     }
 
-    public int basicAttack() {
-        Random basicAttackDmgRand = new Random();
-        int basicAttackUpperBound = 7;
-        int basicAttackDmg = basicAttackDmgRand.nextInt(basicAttackUpperBound);
+    public int Claw() 
+    {
+        Random clawDmgRand = new Random();
+        int clawDmgUpperBound = 10;
+        int clawDmg = clawDmgRand.nextInt(clawDmgUpperBound);
+        DialogPrinter.printDialog("The beast lunges towrads you, with immense force");
+        System.out.println();
+        DialogPrinter.printDialog("The broad slash of the sharp claws inflict " + clawDmg + " DMG!");
+        return clawDmg; // Return the damage value
+    }
+
+    public int furyStrikes() 
+    {
+        Random furyStrikeDmgRand = new Random();
+        int furyStrikesUppberBound = 15;
+        int furyStrikesLowerBound = 7;
+        int furyStrikeDmg = furyStrikeDmgRand.nextInt(furyStrikesUppberBound - furyStrikesLowerBound) + furyStrikesLowerBound;
+        DialogPrinter.printDialog("The Dragon strike you with unrealentetd fury,");
+        System.out.println();
+        DialogPrinter.printDialog("The force of the behemoth hits you, and you take " + furyStrikeDmg + " DMG!");
+        return furyStrikeDmg; // Return the damage value
+    }
+
+    public int flameBreath() 
+    {
+        Random flameBreathRand = new Random();
+        int flameBreathUpperBound = 25;
+        int flameBreathLowerBound = 20;
+        int flameBreathDmg = flameBreathRand.nextInt(flameBreathUpperBound - flameBreathLowerBound) + flameBreathLowerBound;
         DialogPrinter.printDialog("The dragon takes a deep breath, and lay the land in a burning glaze");
         System.out.println();
-        DialogPrinter.printDialog("The intense fire of the beast does " + basicAttackDmg + " DMG!");
-        return basicAttackDmg; // Return the damage value
+        DialogPrinter.printDialog("The intense fire of the beast does " + flameBreathDmg + " DMG!");
+        return flameBreathDmg; // Return the damage value
     }
 }

@@ -38,6 +38,16 @@ public class MainPlayerClass {
         System.out.println(ANSI_BLUE + "Current MANA: " + currentMana + ANSI_RESET);
     }
 
+    public void playerMana()
+    {
+        System.out.println(ANSI_BLUE + "Your remaning mana pool is:  " + currentMana + ANSI_RESET);
+    }
+
+    public void playerHP()
+    {
+        System.out.println(ANSI_RED + "Current HP: " + currentHP + ANSI_RESET);
+    }
+
         public void manaPotion() {
         System.out.println("You drink a mana potion, and it has added 20 mana to your pool");
         currentMana += 20;
