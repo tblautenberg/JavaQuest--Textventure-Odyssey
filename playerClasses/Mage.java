@@ -3,19 +3,20 @@ package playerClasses;
 import java.util.Random;
 
 public class Mage extends MainPlayerClass {
-    public Mage(int currentHP, int currentMana, int Intelligence, int Strength, int Agility, int Spirit, int Stamina) {
+    public Mage(int currentHP, int currentMana) {
         // Call the constructor of the parent class (MainPlayerClass)
-        super(currentHP, currentMana, Intelligence, Strength, Agility, Spirit, Stamina);
+        super(currentHP, currentMana);
     }
 
 
-    public void basicAttack()
+    public int basicAttack()
     {
         Random basicAttackDmgRand = new Random();
         int basicAttackUpperBound = 7;
         int basicAttackDmg = basicAttackDmgRand.nextInt(basicAttackUpperBound);
         System.out.println("The mage carefully aims at his target, releasing a powerful shot!");
         System.out.println("The aimed shot does " + basicAttackDmg + " DMG!");
+        return basicAttackDmg;
     }
 
 
@@ -26,7 +27,7 @@ public class Mage extends MainPlayerClass {
         Boolean spellShield = true;
     }
 
-    public void fireball()
+    public int Fireball()
     {
 
         Random fireballDmgRand = new Random();
@@ -35,10 +36,11 @@ public class Mage extends MainPlayerClass {
         System.out.println("The mage conjurs and hurls a flaming projectile at the target, causing fiery explosions.");
         System.out.println("The fireball does " + fireballDmg + " DMG!");
         currentMana -= 15;
+        return fireballDmg;
 
     }
 
-    public void earthquake()
+    public int Earthquake()
     {
         Random earthquakeDmgRand = new Random();
         int earthquakeDmgRandUpperBound = 10;
@@ -46,6 +48,7 @@ public class Mage extends MainPlayerClass {
         System.out.println("The mage sends shockwaves through the ground, causing the ground to shake.");
         System.out.println("The earthquake deals " + earthquakeDmg + " DMG!");
         currentMana -=10;
+        return earthquakeDmg;
     }
 }
 

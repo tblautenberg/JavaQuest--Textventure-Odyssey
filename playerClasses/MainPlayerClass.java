@@ -15,20 +15,10 @@ public class MainPlayerClass {
 
     public int currentHP;
     public int currentMana;
-    public int Intelligence;
-    public int Strenght;
-    public int Agility;
-    public int Spirit;
-    public int Stamnina;
 
-    public MainPlayerClass(int currentHP, int currentMana, int Intelligence, int Strenght, int Agility, int Spirit, int Stamnina) {
+    public MainPlayerClass(int currentHP, int currentMana) {
         this.currentHP = currentHP;
         this.currentMana = currentMana;
-        this.Intelligence = Intelligence;
-        this.Strenght = Strenght;
-        this.Agility = Agility;
-        this.Spirit = Spirit;
-        this.Stamnina = Stamnina;
     }
 
 
@@ -55,8 +45,8 @@ public class MainPlayerClass {
     }
 
         public void healthPotion() {
-        System.out.println("You drink a mana potion, and it has added 20 health to your pool");
+        System.out.println("You drink a health potion, and it has added 20 health to your pool");
         currentHP += 20;
-        System.out.println("Your current MANA: " + ANSI_RED + currentHP + ANSI_RESET);
+        System.out.println("Your current HP: " + ANSI_RED + currentHP + ANSI_RESET);
     }
 }

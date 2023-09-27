@@ -1,7 +1,7 @@
 package playerClasses;
 import java.util.Random;
 
-public class Enemy {
+public class Dragon {
 
     
     public static final String ANSI_RESET = "\u001B[0m";
@@ -14,8 +14,11 @@ public class Enemy {
     public static final String ANSI_CYAN = "\u001B[36m";
     public static final String ANSI_WHITE = "\u001B[37m";
 
-    public int currentHP = 50;
-    public int currentMana = 50;
+    public int currentHP;
+
+    public Dragon(int currentHP) {
+        this.currentHP = currentHP;
+    }
 
 
     public void currentEnemyStats() 

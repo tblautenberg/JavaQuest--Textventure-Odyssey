@@ -3,9 +3,9 @@ package playerClasses;
 import java.util.Random;
 
 public class Hunter extends MainPlayerClass {
-    public Hunter(int currentHP, int currentMana, int Intelligence, int Strength, int Agility, int Spirit, int Stamina) {
+    public Hunter(int currentHP, int currentMana) {
         // Call the constructor of the parent class (MainPlayerClass)
-        super(currentHP, currentMana, Intelligence, Strength, Agility, Spirit, Stamina);
+        super(currentHP, currentMana);
     }
 
 
@@ -28,14 +28,13 @@ public class Hunter extends MainPlayerClass {
 
     public int aimedShot()
     {
-
         Random aimedShotDmgRand = new Random();
         int aimedUpperBound = 25;
         int aimedShotDmg = aimedShotDmgRand.nextInt(aimedUpperBound);
         DialogPrinter.printDialog("The hunter carefully aims at his target, releasing a powerfull shot!");
         System.out.println();
         DialogPrinter.printDialog("The aimed shot does " + aimedShotDmg + " DMG!");
-        currentMana -= 15;
+        currentMana -= 35;
         return aimedShotDmg;
 
     }
@@ -46,7 +45,7 @@ public class Hunter extends MainPlayerClass {
         int arcaneUpperBound = 10;
         int arcaneShotDmg = arcaneShotDmgRand.nextInt(arcaneUpperBound);
         DialogPrinter.printDialog("The shot deals " + arcaneShotDmg + " DMG!");
-        currentMana -=10;
+        currentMana -=25;
         return arcaneShotDmg;
     }
 }
