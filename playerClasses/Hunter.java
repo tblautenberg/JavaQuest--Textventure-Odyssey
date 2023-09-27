@@ -4,7 +4,6 @@ import java.util.Random;
 
 public class Hunter extends MainPlayerClass {
     public Hunter(int currentHP, int currentMana) {
-        // Call the constructor of the parent class (MainPlayerClass)
         super(currentHP, currentMana);
     }
 
@@ -15,11 +14,11 @@ public class Hunter extends MainPlayerClass {
         int basicAttackUpperBound = 7;
         int basicAttackDmg = basicAttackDmgRand.nextInt(basicAttackUpperBound);
         DialogPrinter.printDialog("The shot does " + basicAttackDmg + " DMG!");
-        return basicAttackDmg; // Return the damage value
+        return basicAttackDmg;
     }
     
 
-    public void huntersMark()
+    public void huntersMark() // Virker ikke som den skal - men kunne være fedt at lave :3
     {
         DialogPrinter.printDialog("The hunter casts hunters mark on target \n");
         DialogPrinter.printDialog("The roll has been increased by 5 pr. ability");
@@ -30,7 +29,8 @@ public class Hunter extends MainPlayerClass {
     {
         Random aimedShotDmgRand = new Random();
         int aimedUpperBound = 25;
-        int aimedShotDmg = aimedShotDmgRand.nextInt(aimedUpperBound);
+        int aimedLowerBound = 15;
+        int aimedShotDmg = aimedShotDmgRand.nextInt(aimedUpperBound - aimedLowerBound) + aimedLowerBound;
         DialogPrinter.printDialog("The hunter carefully aims at his target, releasing a powerfull shot!");
         System.out.println();
         DialogPrinter.printDialog("The aimed shot does " + aimedShotDmg + " DMG!");
@@ -43,7 +43,8 @@ public class Hunter extends MainPlayerClass {
     {
         Random arcaneShotDmgRand = new Random();
         int arcaneUpperBound = 10;
-        int arcaneShotDmg = arcaneShotDmgRand.nextInt(arcaneUpperBound);
+        int arcaneLowerBound = 6;
+        int arcaneShotDmg = arcaneShotDmgRand.nextInt(arcaneUpperBound - arcaneLowerBound) + arcaneLowerBound;
         DialogPrinter.printDialog("The shot deals " + arcaneShotDmg + " DMG!");
         currentMana -=25;
         return arcaneShotDmg;

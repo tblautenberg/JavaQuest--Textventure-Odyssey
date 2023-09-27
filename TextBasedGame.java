@@ -18,7 +18,7 @@ public class TextBasedGame
     {
         Scanner scannerObj = new Scanner(System.in);    
 
-        System.out.println("                                                         _____------------___\n" + //
+        System.out.println(ANSI_YELLOW + "                                                         _____------------___\n" + //
                 "                                                    ._--':::::'-------____\n" + //
                 "                .___------__       /-.._.    _---_ '|:::::::::::::::::::::---\n" + //
                 "           ._--'.---::::::/ `      \\ .-. '-'' *__*|/:::::::::::::::::::::::::\n" + //
@@ -52,11 +52,11 @@ public class TextBasedGame
                 "/ /\\.--..--..--..--..--..--..--..--..--..--..--..--..--..--..--..--..--..--..--..--..--..--..--..--..--./ /\\ \n" + //
                 "/ /\\ \\.. \\.. \\.. \\.. \\.. \\.. \\.. \\.. \\.. \\.. \\.. \\.. \\.. \\.. \\.. \\.. \\.. \\.. \\.. \\.. \\.. \\.. \\.. \\.. \\.. \\/\\ \\\n" + //
                 "\\ `'\\ `'\\ `'\\ `'\\ `'\\ `'\\ `'\\ `'\\ `'\\ `'\\ `'\\ `'\\ `'\\ `'\\ `'\\ `'\\ `'\\ `'\\ `'\\ `'\\ `'\\ `'\\ `'\\ `'\\ `'\\ `'\\ `' /\n" + //
-                "`--'`--'`--'`--'`--'`--'`--'`--'`--'`--'`--'`--'`--'`--'`--'`--'`--'`--'`--'`--'`--'`--'`--'`--'`--'`--'`--'");
+                "`--'`--'`--'`--'`--'`--'`--'`--'`--'`--'`--'`--'`--'`--'`--'`--'`--'`--'`--'`--'`--'`--'`--'`--'`--'`--'`--'"+ ANSI_RESET);
 
         System.out.println("Welcome to the: JavaQuest: Textventure Odyssey!");
         System.out.println("For new game press: 1");
-        System.out.println("To see the rulings press: 2");
+        System.out.println("To see the credits of the awesome creators press: 2");
 
         while(true)
         {
@@ -67,7 +67,7 @@ public class TextBasedGame
 
                 if(welcomePrompt == 1)
                 {
-                    System.out.println("\n*******************************************\n*****************Chapter 1*****************\n*******************************************\n");
+                    System.out.println(ANSI_YELLOW + "\n*******************************************\n*****************Chapter 1*****************\n*******************************************\n" + ANSI_RESET);
                     
                     DialogPrinter.printDialog("With your belongings packed and food prepared, you step out onto a great journey.\n");
                     DialogPrinter.printDialog("Before long you cross paths with an old man with a cane.\n");
@@ -75,11 +75,14 @@ public class TextBasedGame
 
                     DialogPrinter.printDialog("Greetings wanderer! May you be the the one I've been looking for?\n");
                     DialogPrinter.printDialog("... Please! What is your name, wanderer?\n\n");
-                    System.out.print("Please enter your name: ");
+                    System.out.print("- Please enter your name: ");
                     String p_Name = scannerObj.nextLine();
 
-                    DialogPrinter.printDialog("\n\n" + p_Name + "... That is the name the oracle has spoken of. Thus you must be the chosen one. What an honour to stand in your presence!\n");
-                    DialogPrinter.printDialog("I see you have a bow. May I assume you are a hunter? -(Y/N)- \n");
+                    DialogPrinter.printDialog("\n" + p_Name + "... That is the name the oracle has spoken of. Thus you must be the chosen one. What an honour to stand in your presence!\n");
+                    DialogPrinter.printDialog("I see you have a bow. May I assume you are a hunter?\n");
+                    System.out.println();
+                    System.out.print("- Please insert either Y or N: ");
+                    
 
                     String playerPrompt1 = null;
                     while (playerPrompt1 != "Y")
@@ -88,11 +91,13 @@ public class TextBasedGame
                         
                         if(playerPrompt1.equals("Y"))
                         {
+                            System.out.println();
                             DialogPrinter.printDialog("Oh, wonderful!\n");
                             break;
                         }
                         else if(playerPrompt1.equals("N"))
                         {
+                            System.out.println();
                             DialogPrinter.printDialog("Oh... This is embarrassing. I could've sworn the oracle spoke of a hunter!... Are you one? -(Y/N)-\n");
                         }
                         else
@@ -102,10 +107,12 @@ public class TextBasedGame
                     }
 
                     DialogPrinter.printDialog("So, the quest...");
-                    DialogPrinter.printDialog("Oh pardon me, I have not yet introduced myself.\n");
+                    DialogPrinter.printDialog(" Oh pardon me, I have not yet introduced myself.\n");
                     DialogPrinter.printDialog("My name is Alfred. I am but a simple villager, but I have been given the task of guiding you on your journey.\n");
                     
-                    DialogPrinter.printDialog("May I ask, do you know of the quest ahead? -(Y/N)-\n");
+                    DialogPrinter.printDialog("May I ask, do you know of the quest ahead?\n");
+                    System.out.println();
+                    System.out.print("- Please insert either Y or N: ");
                     playerPrompt1 = null;
                     while (playerPrompt1 != "Y" && playerPrompt1 != "N")
                     {   
@@ -113,18 +120,20 @@ public class TextBasedGame
                         
                         if(playerPrompt1.equals("Y"))
                         {
+                            System.out.println();
                             DialogPrinter.printDialog("Ah. I that case, I shall bother you no longer.\n");
                             break;
                         }
                         else if(playerPrompt1.equals("N"))
                         {
+                            System.out.println();
                             DialogPrinter.printDialog("Blimey! I suppose I must inform you.\n");
                             DialogPrinter.printDialog("Six months ago in a nearby castle, a dragon settled.\n");
                             DialogPrinter.printDialog("It terrorised its surroundings and burnt the surrounding village to the ground!\n");
                             DialogPrinter.printDialog("... My village...\n");
                             DialogPrinter.printDialog("There is no saying where it will strike next, and I fear the entire kingdom is in danger.\n");
                             DialogPrinter.printDialog("I went to the great oracle, begging for a sign of hope.\n");
-                            DialogPrinter.printDialog("And it lead me to you... You must go, " + p_Name + "\n");
+                            DialogPrinter.printDialog("And it lead me to you... You must go, " + p_Name + ".\n");
                             break;
                         }
                         else
@@ -134,17 +143,19 @@ public class TextBasedGame
                     }
                     DialogPrinter.printDialog("The quest lies ahead!\n");
                     System.out.println("********************************************\n");
-                    DialogPrinter.printDialog("You follow Alfred continue down the path\n");
+                    DialogPrinter.printDialog("You follow Alfred continue down the path...\n");
+        
 
-                    
-                    System.out.println("\n*******************************************\n*****************Chapter 2*****************\n*******************************************\n");
+                    while(true)
+                    {
+                    System.out.println(ANSI_YELLOW + "\n*******************************************\n*****************Chapter 2*****************\n*******************************************\n" + ANSI_RESET);
 
-                    DialogPrinter.printDialog("You and Alfred exit the village\n");
-                    DialogPrinter.printDialog("All of the sudden you hear screams in the distance\n");
-                    DialogPrinter.printDialog("You run towards the sounds and find a nearby village covered in frames!\n");
+                    DialogPrinter.printDialog("You and Alfred exit the village.\n");
+                    DialogPrinter.printDialog("All of the sudden you hear screams in the distance.\n");
+                    DialogPrinter.printDialog("You run towards the sounds and find a nearby village covered in fire!\n");
                     DialogPrinter.printDialog("A large reptilian head rises above the chaos.\n");
-                    DialogPrinter.printDialog("A desire to kill in its eyes as it unleashes a breath of fire around it\n");
-                    DialogPrinter.printDialog("The time for justice is here! You step forward with all of your courage on your side\n");
+                    DialogPrinter.printDialog("A desire to kill in its eyes as it unleashes a breath of fire around it.\n");
+                    DialogPrinter.printDialog("The time for justice is here! You step forward with all of your courage on your side...\n");
 
 
 
@@ -177,7 +188,7 @@ public class TextBasedGame
                 case 1:
                     // Perform basic attack
                     System.out.println();
-                    System.out.println("The player shoots!");
+                    System.out.println(p_Name + " shoots!");
                     int playerDamage = Player.basicAttack();
                     Dragon.currentHP -= playerDamage;
                     break;
@@ -191,7 +202,7 @@ public class TextBasedGame
                     if (Player.currentMana >= 15) 
                     {
                         System.out.println();
-                        DialogPrinter.printDialog("The player performs Aimed Shot!\n");
+                        DialogPrinter.printDialog( p_Name + " performs Aimed Shot!\n");
                         int aimedShotDamage = Player.aimedShot();
                         Dragon.currentHP -= aimedShotDamage;
                     } else 
@@ -204,7 +215,7 @@ public class TextBasedGame
                     if (Player.currentMana >= 10) 
                     {
                         System.out.println();
-                        DialogPrinter.printDialog("The player casts Arcane Shot!\n");
+                        DialogPrinter.printDialog(p_Name + " casts Arcane Shot!\n");
                         int arcaneShotDamage = Player.arcaneShot();
                         Dragon.currentHP -= arcaneShotDamage;
                     } else 
@@ -222,7 +233,7 @@ public class TextBasedGame
                     }
                     else
                     System.out.println();
-                    System.out.println("You have used all your mnana potios.");
+                    System.out.println("You have used all your mnana potions.");
                     break;
 
                     case 6:
@@ -234,7 +245,7 @@ public class TextBasedGame
                     }
                     else
                     System.out.println();
-                    System.out.println("You have used all your mnana potios.");
+                    System.out.println("You have used all your mnana potions.");
                     break;
 
                 default:
@@ -296,8 +307,8 @@ public class TextBasedGame
             // Display player and enemy HP
             System.out.println();
             System.out.print("********************************************");
-            DialogPrinter.printDialog(ANSI_RED + "\nPlayer's HP: " + Player.currentHP + ANSI_RESET);
-            DialogPrinter.printDialog(ANSI_BLUE + "\nPlayer's mana pool: " + Player.currentMana + ANSI_RESET);
+            DialogPrinter.printDialog(ANSI_RED + "\n" + p_Name + "'s HP: " + Player.currentHP + ANSI_RESET);
+            DialogPrinter.printDialog(ANSI_BLUE +"\n" + p_Name + "'s mana: " + Player.currentMana + ANSI_RESET);
             System.out.println();
             System.out.println();
             DialogPrinter.printDialog(ANSI_RED + "Dragon's HP: " + Dragon.currentHP + ANSI_RESET);
@@ -311,9 +322,49 @@ public class TextBasedGame
             }
 
             System.out.println("********************************************");
-            System.out.print("Press ENTER to advance to the player's turn");
-            input.nextLine(); // Wait for player to press Enter
+
+            try {
+                Thread.sleep(1000); // Pauser scriptet i 1 sekund så det hele ikke er instant
+            } catch (InterruptedException e) {
+
+            }
+
         }
+
+        if (Dragon.currentHP <= 0)
+        {
+            DialogPrinter.printDialog("\nThe creature's scream of pain fades, as the giant figure collapses over the burnt ruins of its last victim.\n");
+            DialogPrinter.printDialog("You and Alfred stand before it, staring at the scene, trying to complehend what you just managed.\n");
+            DialogPrinter.printDialog("Scared villagers crawl out from various hiding spots.\n");
+            DialogPrinter.printDialog("Several of them approach you, thanking you for your duty with great relief in their voices.\n\n");
+            DialogPrinter.printDialog("You have won!");
+            break;
+        }
+        else
+        {
+            DialogPrinter.printDialog("\nAs your injuries get too bad for you to fight, the roaring flames consume you.\n");
+            DialogPrinter.printDialog("You hear a strange voice.\n");
+            DialogPrinter.printDialog("This does not have to be the end. Do you wish to try again?\n");
+            
+
+            System.out.println("- Y or N ");
+            playerPrompt1 = scannerObj.nextLine();
+
+            if(playerPrompt1.equals("Y"))
+            {
+                DialogPrinter.printDialog("The kingdom depends on you, " + p_Name + ".\n You must not give up!\n");
+            }
+            else if(playerPrompt1.equals("N"))
+            {
+                DialogPrinter.printDialog("Goodbye, " + p_Name + "...\n");
+                break;
+            }
+            else
+            {
+                System.out.println("- Invalid input - please select either, Y or N -\n");
+            }
+         }
+      }
     }
 }
                 else if(welcomePrompt == 2)
