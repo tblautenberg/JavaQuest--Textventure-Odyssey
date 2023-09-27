@@ -48,3 +48,5 @@ public class Mage extends MainPlayerClass {
         currentMana -=10;
     }
 }
+
+//hej :)
