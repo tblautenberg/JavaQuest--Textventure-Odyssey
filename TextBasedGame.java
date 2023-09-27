@@ -369,13 +369,8 @@ public class TextBasedGame
 }
                 else if(welcomePrompt == 2)
                 {
-                    System.out.println("Here are the official ruleings");
-                    System.out.println("Print ruling 1");
-                    System.out.println("Print ruling 2");
-                    System.out.println("Print ruling 3");
-                    System.out.println("Print ruling 4");
-                    System.out.println("Print ruling 5");
-                    System.out.println("***************");
+                    System.out.println("Here are the creds!");
+                    System.out.println("Made by - Tobias, Sarah, Frey, Rasmus and Alexander");
                     System.out.println("Press 1 to start the game, or 3 to close the game");
                 }
                 else if(welcomePrompt == 3)

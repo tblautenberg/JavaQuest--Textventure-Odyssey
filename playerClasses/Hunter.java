@@ -25,6 +25,17 @@ public class Hunter extends MainPlayerClass {
         Boolean huntersMarkActive = true;
     }
 
+ public int arcaneShot()
+    {
+        Random arcaneShotDmgRand = new Random();
+        int arcaneUpperBound = 10;
+        int arcaneLowerBound = 6;
+        int arcaneShotDmg = arcaneShotDmgRand.nextInt(arcaneUpperBound - arcaneLowerBound) + arcaneLowerBound;
+        DialogPrinter.printDialog("The shot deals " + arcaneShotDmg + " DMG!");
+        currentMana -=25;
+        return arcaneShotDmg;
+    }
+
     public int aimedShot()
     {
         Random aimedShotDmgRand = new Random();
@@ -37,16 +48,5 @@ public class Hunter extends MainPlayerClass {
         currentMana -= 35;
         return aimedShotDmg;
 
-    }
-
-    public int arcaneShot()
-    {
-        Random arcaneShotDmgRand = new Random();
-        int arcaneUpperBound = 10;
-        int arcaneLowerBound = 6;
-        int arcaneShotDmg = arcaneShotDmgRand.nextInt(arcaneUpperBound - arcaneLowerBound) + arcaneLowerBound;
-        DialogPrinter.printDialog("The shot deals " + arcaneShotDmg + " DMG!");
-        currentMana -=25;
-        return arcaneShotDmg;
     }
 }

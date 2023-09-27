@@ -54,8 +54,8 @@ public class Dragon {
     public int flameBreath() 
     {
         Random flameBreathRand = new Random();
-        int flameBreathUpperBound = 30;
-        int flameBreathLowerBound = 50;
+        int flameBreathUpperBound = 50;
+        int flameBreathLowerBound = 30;
         int flameBreathDmg = flameBreathRand.nextInt(flameBreathUpperBound - flameBreathLowerBound) + flameBreathLowerBound;
         DialogPrinter.printDialog("The dragon takes a deep breath, and lay the land in a burning glaze");
         System.out.println();
