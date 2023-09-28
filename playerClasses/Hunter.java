@@ -32,7 +32,7 @@ public class Hunter extends MainPlayerClass {
         int arcaneLowerBound = 6;
         int arcaneShotDmg = arcaneShotDmgRand.nextInt(arcaneUpperBound - arcaneLowerBound) + arcaneLowerBound;
         DialogPrinter.printDialog("The shot deals " + arcaneShotDmg + " DMG!");
-        currentMana -=25;
+        currentMana -=30;
         return arcaneShotDmg;
     }
 
@@ -45,7 +45,7 @@ public class Hunter extends MainPlayerClass {
         DialogPrinter.printDialog("The hunter carefully aims at his target, releasing a powerfull shot!");
         System.out.println();
         DialogPrinter.printDialog("The aimed shot does " + aimedShotDmg + " DMG!");
-        currentMana -= 35;
+        currentMana -= 40;
         return aimedShotDmg;
 
     }

@@ -144,7 +144,6 @@ public class TextBasedGame
                     DialogPrinter.printDialog("The quest lies ahead!\n");
                     System.out.println("********************************************\n");
                     DialogPrinter.printDialog("You follow Alfred continue down the path...\n");
-        
 
                     while(true)
                     {
@@ -167,8 +166,8 @@ public class TextBasedGame
         int healthPotionAmount = 3;
         int manaPotionAmount = 3;
 
-        while (Player.currentHP > 0 && Dragon.currentHP > 0) {
-            // Display menu for player actions
+        while (Player.currentHP > 0 && Dragon.currentHP > 0) 
+        {
             System.out.println();
             System.out.println(ANSI_GREEN + "Player's Turn:" + ANSI_RESET);
             System.out.println("1. Basic Attack");
@@ -180,11 +179,12 @@ public class TextBasedGame
             System.out.print("Choose an action (1-6): ");
 
 
-            // Read player's choice
+
             int playerChoice = input.nextInt();
             input.nextLine(); // Consume the newline character
 
-            switch (playerChoice) {
+            switch (playerChoice)
+            {
                 case 1:
                     // Perform basic attack
                     System.out.println();

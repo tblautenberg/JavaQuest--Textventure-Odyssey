@@ -42,9 +42,9 @@ public class Dragon {
     public int furyStrikes() 
     {
         Random furyStrikeDmgRand = new Random();
-        int furyStrikesUppberBound = 20;
+        int furyStrikesUpperBound = 20;
         int furyStrikesLowerBound = 7;
-        int furyStrikeDmg = furyStrikeDmgRand.nextInt(furyStrikesUppberBound - furyStrikesLowerBound) + furyStrikesLowerBound;
+        int furyStrikeDmg = furyStrikeDmgRand.nextInt(furyStrikesUpperBound - furyStrikesLowerBound) + furyStrikesLowerBound;
         DialogPrinter.printDialog("The Dragon strike you with unrealentetd fury,");
         System.out.println();
         DialogPrinter.printDialog("The force of the behemoth hits you, and you take " + furyStrikeDmg + " DMG!");
