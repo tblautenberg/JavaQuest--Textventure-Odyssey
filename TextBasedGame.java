@@ -212,7 +212,7 @@ public class TextBasedGame
                     break;
                 case 4:
                     // Perform Arcane Shot
-                    if (Player.currentMana >= 10) 
+                    if (Player.currentMana >= 10);
                     {
                         System.out.println();
                         DialogPrinter.printDialog(p_Name + " casts Arcane Shot!\n");
@@ -221,6 +221,7 @@ public class TextBasedGame
                     } else 
                     {
                         DialogPrinter.printDialog("Not enough mana for Arcane Shot.");
+                        
                     }
                     break;
 
